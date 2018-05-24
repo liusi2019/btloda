@@ -1,0 +1,14 @@
+Package: btloda
+Type: Package
+Title: Light weight online detector of anomalies(LODA) with bootstrap and out-of-bag
+Version: 0.1.1
+Authors: Tadesse Zemicheal <zemichet@oregonstate.edu> Si Liu <lius2@oregonstate.edu>
+Maintainer: Tadesse Zemicheal <zemichet@oregonstate.edu> Si Liu <lius2@oregonstate.edu>
+Description: Anomaly detection tools.
+License: NA
+LazyData: TRUE
+Depends: histogram
+NeedsCompilation: no
+Encoding: UTF-8
+Packaged: 2017-10-30 02:44:37 UTC; zemichet 2018-01-22; liu
+RoxygenNote: 6.0.1.9000
