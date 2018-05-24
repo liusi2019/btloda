@@ -1,4 +1,5 @@
 #' get negative loglikelihood from all histograms
+#' @export
 get_neg_ll_all_hist <-
 function(a, w, hists, inf_replace=NA) {
   a = as.matrix(a)
