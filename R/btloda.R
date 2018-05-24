@@ -1,5 +1,5 @@
 #' This function returns both the anomaly scores and the projection results
-
+#' @export
 btloda <-
 function(a,sparsity=NA, maxk=1000, keep=NULL, exclude=NULL, debug=F, inf_replace = log(1e-09)) {
   a <- as.matrix(a)
