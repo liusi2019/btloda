@@ -1,16 +1,14 @@
 
 
 bt_proj <-
-function(a, maxk=1000, sp=1-1/sqrt(ncol(a)), keep=NULL, exclude=NULL, debug=F) {
+function(a, maxk=1000, sp=1-1/sqrt(ncol(a))) {
   n <- nrow(a)
   d <- ncol(a)
-  
-  if (debug) print(paste("sparsity", sp))
 
   w <- matrix(0, nrow=d, ncol=maxk)
   hists <- list()
 
-  w <- get_random_proj(nproj=maxk, d=d, sp=sp, keep=keep, exclude=exclude)
+  w <- get_random_proj(nproj=maxk, d=d, sp=sp)
   record_mat <- matrix(nrow = n, ncol = maxk)
   for (i in 1:maxk){
     bt_index = sample(1:n, n, replace = TRUE, prob = NULL)
