@@ -2,10 +2,28 @@
 % Please edit documentation in R/get_neg_ll_all_hist.R
 \name{get_neg_ll_all_hist}
 \alias{get_neg_ll_all_hist}
-\title{get negative loglikelihood from all histograms}
+\title{Take data, projections and histograms as input, return the anomaly scores of the data.}
 \usage{
-get_neg_ll_all_hist(a, w, hists, inf_replace = NA)
+get_neg_ll_all_hist(a, w, hists, inf_replace = log(1e-09))
+}
+\arguments{
+\item{a}{Input dataframe or data matrix.}
+
+\item{w}{Projections.}
+
+\item{hists}{Hisograms.}
+
+\item{inf_replace}{The quantity to use to replace the possible negative infinity got from calculating log density based on the histograms built. Default is log(1e-09).}
+}
+\value{
+Anomaly scores.
 }
 \description{
-get negative loglikelihood from all histograms
+Take data, projections and histograms as input, return the anomaly scores of the data.
+}
+\examples{
+a = matrix(rnorm(200, 0, 1), nrow = 20, ncol = 10)
+bt_out = btloda(a,sparsity=NA, maxk=1000, inf_replace = log(1e-09))
+b = matrix(rnorm(500), nrow = 50, ncol = 10)
+get_neg_ll_all_hist(b, bt_out$pvh$w, bt_out$pvh$hists, inf_replace = log(1e-09))
 }
